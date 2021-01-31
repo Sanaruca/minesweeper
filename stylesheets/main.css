@@ -1,0 +1,32 @@
+      body {
+        background-color: rgb(212, 212, 212);
+      }
+
+      table,
+      th,
+      td { 
+        border: 2px solid rgba(0, 33, 54, 0.479);
+        border-radius: 5px;
+      }
+
+      td {
+        height: 60px;
+        width: 60px;
+        background: radial-gradient(rgb(52, 188, 241),rgb(0, 48, 138));
+        text-align: center;
+        user-select: none;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        color: transparent;
+
+      }
+      
+      .bom {
+        background-color: rgb(255, 72, 59);
+        background: radial-gradient(rgb(223, 51, 38),rgb(138, 0, 0));
+        color: #fff6e8;
+        font-weight: 700;
+      }
+      .flag {
+        background-color: brown;
+      }

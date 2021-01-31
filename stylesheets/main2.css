@@ -1,0 +1,48 @@
+body {
+  background-color: #0d151d;
+}
+
+table,
+th,
+td {
+  border: none;
+  border-radius: 10px;
+  border-spacing: 7px;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+}
+
+td {
+  background: #19293a;
+  padding: 15px;
+  text-align: center;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  color: transparent;
+  border: 1px solid #ffffff0a;
+  transition: cubic-bezier(0.55, 0.09, 0, 1.04) .2s;
+}
+
+.bom {
+  background-color: rgb(196, 45, 45);
+  color: #fff6e8;
+  font-weight: 700;
+}
+.flag {
+  background-color: #2a6ea5;
+}
+.hola{
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  transition: linear 2s;
+}
+.hola:hover{
+  background: #064057ab;
+}

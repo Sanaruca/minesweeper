@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>index</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      border: none;
+    }
+    body{
+      background:#19293a;
+      height: 100%;
+      user-select: none;
+    }
+    a{
+      text-decoration: none;
+      color: inherit;
+    }
+    button{
+      background:#2a6ea5;
+      font-size: 2em;
+      outline: none;
+      transition: linear .1s;
+      padding: 10px 20px;
+      color: #ffffff;
+      display: block;
+      margin: 16px;
+      cursor: pointer;
+    }
+    button:hover{
+      background: #ffffff;
+      color: #2a6ea5;
+      box-shadow: 10px 10px #2a6ea5;
+    }
+    .buttons{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: 50%;
+      right: 50%;
+      transform: translate(50%,-50%);
+    }
+  </style>
+</head>
+<body>
+  <div class="buttons">
+    <button><a href="./app.html">New game</a></button>
+    <button onclick="alert('Nothing for moment...')">How to play</button>
+  </div>
+</body>
+</html>
