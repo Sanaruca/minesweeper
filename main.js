@@ -1,6 +1,6 @@
-let raws = 12,
-  colums = 30,
-  nBoms = 60,
+let raws = 11,
+  colums = 20,
+  nBoms = 50,
   bomPositios = [];
 let firstClick = false;
 document.querySelector("main").appendChild(printTable());
