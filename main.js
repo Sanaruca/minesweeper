@@ -3,14 +3,15 @@ let raws = 11,
   nBoms = 50,
   bomPositios = [];
 let firstClick = false;
-document.querySelector("main").appendChild(printTable());
-const $td = document.querySelectorAll("td");
+document.querySelector('main').appendChild(printTable());
+const $td = document.querySelectorAll('td');
+
 
 $td.forEach((element, index) => {
   element.id = index;
   element.onclick = () => {
     if (firstClick) {
-      if (element.innerText === "0" && !element.hasAttribute("style")) {
+      if (element.innerText === '0' && !element.hasAttribute('style')) {
         clickArround(element);
       }
       show(element);
@@ -26,8 +27,8 @@ $td.forEach((element, index) => {
     clickArround(element);
   };
   element.onauxclick = () => {
-    element.classList.toggle("flag");
-    if (element.classList.contains("flag")) {
+    element.classList.toggle('flag');
+    if (element.classList.contains('flag')) {
       element.onclick = false;
     } else {
       element.onclick = () => show(element);
@@ -48,11 +49,11 @@ function win() {
       if (!j) {
         continue;
       }
-      if (!$td[j].hasAttribute("style") && !bomPositios.includes(j))
+      if (!$td[j].hasAttribute('style') && !bomPositios.includes(j))
         return false;
     }
   }
-  alert("You Win");
+  alert('You Win');
 }
 
 function randomizateBoms(array, to) {
@@ -73,7 +74,7 @@ function randomizateBoms(array, to) {
 function setNumbers() {
   bomPositios.forEach((position) => {
     const emltBom = $td[position];
-    emltBom.innerText = "";
+    emltBom.innerText = '';
 
     const left = emltBom.previousElementSibling;
     const right = emltBom.nextElementSibling;
@@ -118,31 +119,31 @@ setNumbers();
 
 function show(element) {
   if (!bomPositios.includes(Number(element.id))) {
-    element.style.background = "transparent";
+    element.style.background = 'transparent';
     switch (element.innerText) {
-      case "1":
-        element.style.color = "#92abc5";
+      case '1':
+        element.style.color = '#92abc5';
         break;
-      case "2":
-        element.style.color = "#2374d8";
+      case '2':
+        element.style.color = '#2374d8';
         break;
-      case "3":
-        element.style.color = "#c825e4";
+      case '3':
+        element.style.color = '#c825e4';
         break;
-      case "4":
-        element.style.color = "#ff357a";
+      case '4':
+        element.style.color = '#ff357a';
         break;
-      case "5":
-        element.style.color = "#e91c43";
+      case '5':
+        element.style.color = '#e91c43';
         break;
-      case "6":
-        element.style.color = "blue";
+      case '6':
+        element.style.color = 'blue';
         break;
-      case "7":
-        element.style.color = "blue";
+      case '7':
+        element.style.color = 'blue';
         break;
-      case "8":
-        element.style.color = "blue";
+      case '8':
+        element.style.color = 'blue';
         break;
       default:
         break;
@@ -150,13 +151,17 @@ function show(element) {
   } else {
     bomPositios.forEach((index, n) => {
       setTimeout(() => {
-        $td[index].classList.add("bom");
+        $td[index].classList.add('bom');
+        const impactSound = new Audio('./assets/sfx-impact9.mp3');
+        impactSound.play()
       }, n * 50);
     });
-    let tt = document.createElement("div");
-    tt.className = "hola";
+    let tt = document.createElement('div');
+    tt.className = 'hola';
     tt.innerHTML =
-      "<div class='lose-menu'>" + "<button onclick='location.reload()'>Try again</button>" + "</div>";
+      "<div class='lose-menu'>" +
+      "<button onclick='location.reload()'>Try again</button>" +
+      '</div>';
     document.body.prepend(tt);
   }
 }
@@ -197,7 +202,7 @@ function clickArround(element, getID = false) {
 }
 
 function printTable() {
-  const elmtTable = document.createElement("table");
-  elmtTable.innerHTML = `<tr>${"<td>0</td>".repeat(colums)}</tr>`.repeat(raws);
+  const elmtTable = document.createElement('table');
+  elmtTable.innerHTML = `<tr>${'<td>0</td>'.repeat(colums)}</tr>`.repeat(raws);
   return elmtTable;
 }
